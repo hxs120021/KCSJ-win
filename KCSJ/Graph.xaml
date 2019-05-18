@@ -1,0 +1,44 @@
+﻿<Window x:Class="KCSJ.Graph"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:KCSJ"
+        mc:Ignorable="d"
+        Title="Graph" Height="500" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="3*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Name="nameBlock" Text="name1" Grid.Column="0" Grid.Row="0"/>
+        <TextBlock Name="bidBlock" Text="bid111" Grid.Column="1" Grid.Row="0"/>
+        <TextBlock Name="sexBlock" Text="sex111" Grid.Column="2" Grid.Row="0"/>
+        <TextBlock Name="ageBlock" Text="age111" Grid.Column="3" Grid.Row="0"/>
+        <TextBlock Name="sidBlock" Text="sid111" Grid.Column="4" Grid.Row="0"/>
+
+        <Button Name="startButton" Content="start" Grid.Column="5" Grid.Row="0" Width="70" Height="30" Click="StartButton_Click"/>
+        <Button Name="endButton" Content="end" Grid.Column="5" Grid.Row="1" Width="70" Height="30" Click="EndButton_Click"/>
+        <Button Name="alrmButton" Content="alrm" Grid.Column="5" Grid.Row="2" Width="70" Height="30"/>
+        <Button Name="refButton" Content="ref" Grid.Column="5" Grid.Row="3" Width="70" Height="30"/>
+
+        <TextBlock Name="rhBlock" Text="rh:12" Grid.Column="4" Grid.Row="1"/>
+        <TextBlock Name="spo2Block" Text="spo2:12" Grid.Column="4" Grid.Row="2"/>
+        <TextBlock Name="tempBlock" Text="temp:12" Grid.Column="4" Grid.Row="3"/>
+
+        <Canvas Name="rhCan" Grid.Column="0" Grid.ColumnSpan="4" Grid.Row="1" Margin="5"/>
+        <Canvas Name="spo2Can" Grid.Column="0" Grid.ColumnSpan="4" Grid.Row="2" Margin="5"/>
+        <Canvas Name="tempCan" Grid.Column="0" Grid.ColumnSpan="4" Grid.Row="3" Margin="5"/>
+    </Grid>
+</Window>

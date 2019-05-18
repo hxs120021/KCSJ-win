@@ -1,0 +1,30 @@
+﻿<Window x:Class="KCSJ.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:KCSJ"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="500" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="9*"/>
+            <RowDefinition Height="58*"/>
+        </Grid.RowDefinitions>
+        <TextBox Name="hint" Height="30" Margin="47,16,533,17"/>
+        <Button Name="search" Content="sou" Width="60" Height="30" Margin="306,16,426,17" Click="Search_Click"/>
+
+        <ListView Name="ListVv" Margin="10" Grid.Column="0" Grid.Row="1" ItemsSource="{Binding}" MouseDoubleClick="ListVv_MouseDoubleClick">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Bid" Width="100" DisplayMemberBinding="{Binding Path=Bid, Mode=TwoWay}"/>
+                    <GridViewColumn Header="Sid" Width="100" DisplayMemberBinding="{Binding Path=Sid, Mode=TwoWay}"/>
+                    <GridViewColumn Header="name" Width="100" DisplayMemberBinding="{Binding Path=Name, Mode=TwoWay}"/>
+                    <GridViewColumn Header="sex" Width="100" DisplayMemberBinding="{Binding Path=Sex, Mode=TwoWay}"/>
+                    <GridViewColumn Header="age" Width="100" DisplayMemberBinding="{Binding Path=Age, Mode=TwoWay}"/>
+                    
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </Grid>
+</Window>
