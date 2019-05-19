@@ -67,7 +67,7 @@ namespace KCSJ
         {
             Task ListenCheckData = new Task(() =>
             {
-                RecvMsg recv = new RecvMsg(9966, Drawx);
+                RecvMsg recv = new RecvMsg(9988, Drawx);
                 recv.Recv(queue);
             });
 

@@ -26,6 +26,7 @@ namespace KCSJ
     public partial class MainWindow : Window
     {
         ObservableCollection<Equipment> source = null;
+        string searchip = "192.168.0.102";
         public MainWindow()
         {
             InitializeComponent();
@@ -61,7 +62,7 @@ namespace KCSJ
 
             //Task t = new Task(() =>
             //{
-                SendMsg send = new SendMsg("127.0.0.1", 9967);
+                SendMsg send = new SendMsg(searchip, 9967);
 
                 result = send.Send(hint);
                 equipments = DoEquipment.getEqus(result);

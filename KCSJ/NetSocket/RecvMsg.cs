@@ -14,7 +14,7 @@ namespace KCSJ.NetSocket
     class RecvMsg
     {
         //string ip = "127.0.0.1";
-        int port = 9966;
+        int port = 9988;
         FFunc func;
         public RecvMsg(int port, FFunc func)
         {
