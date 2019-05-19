@@ -71,8 +71,10 @@
     <Compile Include="Data\Check.cs" />
     <Compile Include="Data\Equipment.cs" />
     <Compile Include="Data\Port.cs" />
+    <Compile Include="Dod\DataTime.cs" />
     <Compile Include="Dod\DoAlrm.cs" />
     <Compile Include="Dod\DoEquipment.cs" />
+    <Compile Include="Dod\WriteLog.cs" />
     <Compile Include="Graph.xaml.cs">
       <DependentUpon>Graph.xaml</DependentUpon>
     </Compile>

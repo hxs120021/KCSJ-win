@@ -7,6 +7,7 @@ using System.Net;
 using System.Net.Sockets;
 using System.Collections;
 using System.Windows;
+using KCSJ.Dod;
 namespace KCSJ.NetSocket
 {
 
@@ -46,36 +47,37 @@ namespace KCSJ.NetSocket
             IPEndPoint iPEndPoint = new IPEndPoint(ipaddr, port);
             server.Bind(iPEndPoint);
             server.Listen(10);
+            //while (true)
+            //{
+            Socket s = server.Accept();
+                //Task task = new Task(() =>
+                //{
+                //    Socket sc = s;
             while (true)
             {
-                Socket s = server.Accept();
-                Task task = new Task(() =>
+                byte[] recvmsg = new byte[1024];
+                Console.WriteLine("in recv func");
+                try
                 {
-                    Socket sc = s;
-                    while (true)
-                    {
-                        byte[] recvmsg = new byte[1024];
-                        
-                        try
-                        {
-                            sc.Receive(recvmsg);
-                            string data = Encoding.UTF8.GetString(recvmsg);
-                            Console.WriteLine(data);
-                            queue.Enqueue(data);
-                            //执行委托通知UI该绘制了
-                            //CanvasUI();
-                            func();
-                            sc.Send(Encoding.UTF8.GetBytes("ok"));
-                        }catch(Exception e)
-                        {
-                            Console.WriteLine(e.ToString());
-                            break;
-                        }
-                    }
-                    sc.Close();
-                });
-                task.Start();
+                    s.Receive(recvmsg);
+                    string data = Encoding.UTF8.GetString(recvmsg);
+                    Console.WriteLine(data);
+                    queue.Enqueue(data);
+                    //执行委托通知UI该绘制了
+                    //CanvasUI();
+                    func();
+                    WriteLog.WriteL(DataTime.GetTime() + data);
+                    s.Send(Encoding.UTF8.GetBytes("ok"));
+                }catch(Exception e)
+                {
+                    Console.WriteLine(e.ToString());
+                    break;
+                }
             }
+                    
+                //});
+                //task.Start();
+            //}
         }
 
         private void CanvasUI()

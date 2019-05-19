@@ -16,6 +16,7 @@ using KCSJ.NetSocket;
 using KCSJ.CanvasUI;
 using KCSJ.Dod;
 using System.Collections;
+
 namespace KCSJ
 {
     /// <summary>
@@ -67,6 +68,7 @@ namespace KCSJ
         {
             Task ListenCheckData = new Task(() =>
             {
+                Console.WriteLine("start linten 9988");
                 RecvMsg recv = new RecvMsg(9988, Drawx);
                 recv.Recv(queue);
             });
@@ -84,22 +86,22 @@ namespace KCSJ
             //    }));
             //});
 
-            Task ListenAlrm = new Task(() =>
-            {
-                DoAlrm doAlrm = new DoAlrm();
-                doAlrm.WaitAlrm();
-            });
+            //Task ListenAlrm = new Task(() =>
+            //{
+            //    DoAlrm doAlrm = new DoAlrm();
+            //    doAlrm.WaitAlrm();
+            //});
 
             ListenCheckData.Start();
             //DrawUI.Start();
-            ListenAlrm.Start();
+            //ListenAlrm.Start();
         }
 
         public void Drawx()
         {
             this.Dispatcher.Invoke(() =>
             {
-                
+
                 index = draw.DrawGraph(index);
             });
         }

@@ -26,7 +26,7 @@ namespace KCSJ
     public partial class MainWindow : Window
     {
         ObservableCollection<Equipment> source = null;
-        string searchip = "192.168.0.102";
+        string searchip = "10.63.2.115";
         public MainWindow()
         {
             InitializeComponent();
