@@ -5,23 +5,23 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:KCSJ"
         mc:Ignorable="d"
-        Title="MainWindow" Height="500" Width="800">
+        Title="护士站终端" Height="500" Width="800">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="9*"/>
             <RowDefinition Height="58*"/>
         </Grid.RowDefinitions>
-        <TextBox Name="hint" Height="30" Margin="47,16,533,17"/>
-        <Button Name="search" Content="sou" Width="60" Height="30" Margin="306,16,426,17" Click="Search_Click"/>
+        <TextBox Name="hint" Height="25" Width="180" Margin="69,16,523,21"/>
+        <Button Name="search" Content="搜索设备" Width="60" Height="30" Click="Search_Click"/>
 
         <ListView Name="ListVv" Margin="10" Grid.Column="0" Grid.Row="1" ItemsSource="{Binding}" MouseDoubleClick="ListVv_MouseDoubleClick">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="Bid" Width="100" DisplayMemberBinding="{Binding Path=Bid, Mode=TwoWay}"/>
-                    <GridViewColumn Header="Sid" Width="100" DisplayMemberBinding="{Binding Path=Sid, Mode=TwoWay}"/>
-                    <GridViewColumn Header="name" Width="100" DisplayMemberBinding="{Binding Path=Name, Mode=TwoWay}"/>
-                    <GridViewColumn Header="sex" Width="100" DisplayMemberBinding="{Binding Path=Sex, Mode=TwoWay}"/>
-                    <GridViewColumn Header="age" Width="100" DisplayMemberBinding="{Binding Path=Age, Mode=TwoWay}"/>
+                    <GridViewColumn Header="病人id" Width="100" DisplayMemberBinding="{Binding Path=Bid, Mode=TwoWay}"/>
+                    <GridViewColumn Header="设备id" Width="100" DisplayMemberBinding="{Binding Path=Sid, Mode=TwoWay}"/>
+                    <GridViewColumn Header="姓名" Width="100" DisplayMemberBinding="{Binding Path=Name, Mode=TwoWay}"/>
+                    <GridViewColumn Header="性别" Width="100" DisplayMemberBinding="{Binding Path=Sex, Mode=TwoWay}"/>
+                    <GridViewColumn Header="年龄" Width="100" DisplayMemberBinding="{Binding Path=Age, Mode=TwoWay}"/>
                     
                 </GridView>
             </ListView.View>
