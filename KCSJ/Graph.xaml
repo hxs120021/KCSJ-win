@@ -28,8 +28,8 @@
         <TextBlock Name="ageBlock" Text="age111" Grid.Column="3" Grid.Row="0"/>
         <TextBlock Name="sidBlock" Text="sid111" Grid.Column="4" Grid.Row="0"/>
 
-        <Button Name="startButton" Content="start" Grid.Column="5" Grid.Row="0" Width="70" Height="30" Click="StartButton_Click"/>
-        <Button Name="endButton" Content="end" Grid.Column="5" Grid.Row="1" Width="70" Height="30" Click="EndButton_Click"/>
+        <Button Name="startButton" Content="开始" Grid.Column="5" Grid.Row="0" Width="70" Height="30" Click="StartButton_Click"/>
+        <Button Name="endButton" Content="结束" Grid.Column="5" Grid.Row="1" Width="70" Height="30" Click="EndButton_Click"/>
         <!--<Button Name="alrmButton" Content="alrm" Grid.Column="5" Grid.Row="2" Width="70" Height="30"/>
         <Button Name="refButton" Content="ref" Grid.Column="5" Grid.Row="3" Width="70" Height="30"/>-->
 
